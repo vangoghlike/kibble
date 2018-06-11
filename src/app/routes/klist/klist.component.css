@@ -1,0 +1,37 @@
+:host ::ng-deep standard-form-row .trigger.ng-star-inserted {
+  display:none;
+}
+:host ::ng-deep .ant-card-meta-title {
+  margin-bottom: 12px;
+}
+:host ::ng-deep .h3 a {
+  font-size:1.2rem;
+  color:#222;
+}
+:host ::ng-deep nz-list {
+  padding-bottom:32px;
+}
+:host ::ng-deep .ant-row .ant-row a {
+  color:#444;
+}
+:host ::ng-deep .ant-list-something-after-last-item .ant-list-item:last-child {
+  border-bottom:none;
+}
+:host ::ng-deep .half-float.half-float-md {
+  margin-bottom:28px;
+}
+:host ::ng-deep .half-float.half-float-md .half-float-bottom {
+  bottom:-24px;
+  margin-left:-24px;
+  width:48px;
+  height:48px;
+}
+:host ::ng-deep .info-area.text-center {
+  padding:0 16px 16px;
+}
+:host ::ng-deep .info-area.text-center ellipsis {
+  text-align: left;
+}
+:host ::ng-deep .more-area.text-center {
+  border-top:1px solid #f1f2f3;
+}

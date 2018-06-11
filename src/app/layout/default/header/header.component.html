@@ -1,0 +1,20 @@
+
+<header class="header-wrap">
+  <div class="logo">
+    <a [routerLink]="['/']">
+      <img src="{{logoUrl}}" alt="{{settings.app.name}}" style="max-height:80px;" />
+    </a>
+  </div>
+  <nav class="top-nav-wrap">
+    <ul nz-menu [nzMode]="'horizontal'" class="top-nav">
+      <li nz-menu-item><a routerLink="/intro/intro">Happiness PT</a></li>
+      <li nz-menu-item><a routerLink="/klist">행복일기</a></li>
+      <li nz-menu-item><a routerLink="/kibble">행복두레박</a></li>
+      <li nz-menu-item><a routerLink="/kibble">마이페이지</a></li>
+    </ul>
+  </nav>
+  <div class="btn-group">
+    <button nz-button nzType="default" class="emphasis">Contact Us</button>
+    <button nz-button nzType="default" routerLink="/passport/login">로그인</button>
+  </div>
+</header>

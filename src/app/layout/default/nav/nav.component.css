@@ -1,0 +1,27 @@
+:host {
+  position: absolute;
+  top:80px;
+  left:0;
+  width:100%;
+  min-width: 1080px;
+  height: 54px;
+  border-bottom: 1px solid #ddd;
+  background-color: #f7f8f9;
+}
+:host ::ng-deep .lnb-wrap {
+  margin:0 auto;
+  width:1080px;
+  height:inherit;
+  text-align: center;
+}
+:host ::ng-deep [nz-menu] {
+  display: inline-block;
+  padding-top:6px;
+  height: inherit;
+  font-family:'Nanum Square','Malgun Gothic', dotum, sans-serif;
+  background:none;
+  border-bottom:none;
+}
+:host ::ng-deep [nz-menu] li {
+  padding: 0 32px;
+}

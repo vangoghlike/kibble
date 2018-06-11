@@ -1,0 +1,45 @@
+:host {
+  position: fixed;
+  top:0;
+  left:0;
+  min-width: 1080px;
+  height: 80px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: none;
+}
+:host ::ng-deep header {
+  margin: 0 auto;
+  width: 1080px;
+  height: inherit;
+}
+:host ::ng-deep header .logo {
+  display: inline-block;
+  margin:0;
+  text-align: left;
+}
+:host ::ng-deep header nav {
+  display: inline-block;
+  padding:0 40px;
+}
+:host ::ng-deep header [nz-menu] {
+  font-family:'Nanum Square','Malgun Gothic', dotum, sans-serif;
+  border-bottom:none;
+}
+:host ::ng-deep header [nz-menu] li+li {
+  margin-left:32px;
+}
+:host ::ng-deep header [nz-menu] li {
+  padding:0;
+  color:#444;
+  font-weight:600;
+  font-size:1.12rem;
+}
+:host ::ng-deep header .btn-group {
+  display: inline-block;
+  padding-left:40px;
+}
+:host ::ng-deep header [nz-button] {
+  margin:0 3px;
+  border-radius: 16px;
+}

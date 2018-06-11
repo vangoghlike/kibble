@@ -1,0 +1,42 @@
+:host ::ng-deep div.description{
+  margin-left:auto;
+  margin-right:auto;
+  width:640px;
+}
+:host ::ng-deep form {
+  margin:0 auto;
+  width:640px;
+}
+:host ::ng-deep .ant-form-item-label {
+  text-align:left;
+}
+:host ::ng-deep .avatar-uploader > .ant-upload {
+  width: 128px;
+  height: 128px;
+}
+:host ::ng-deep .ant-upload-select-picture-card i {
+  font-size: 32px;
+  color: #999;
+}
+:host ::ng-deep .ant-upload-select-picture-card .ant-upload-text {
+  margin-top: 8px;
+  color: #666;
+}
+:host ::ng-deep [nz-button] {
+  width:100%;
+}
+:host ::ng-deep [nz-button].kakaoBtn {
+  background-color:#fcce00;
+  border:#fcce00;
+  color:#222;
+  font-weight:600;
+}
+:host ::ng-deep [nz-button].kakaoBtn img {
+  width:16px;
+  height:16px;
+}
+:host ::ng-deep .ant-form-item.applyBtn {
+  margin-bottom:4px;
+}
+
+

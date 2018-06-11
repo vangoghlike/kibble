@@ -1,0 +1,51 @@
+<section class="boxed">
+  <nz-content>
+    <div class="mt-lg mb-lg text-grey-dark description">
+      <h4 class="h4 mb-sm">행복두레박 입력하기</h4>
+      <p class="mb-sm">
+        당신의 오늘의 행복점수는 몇점인가요? 당신의 행복점수를 매일매일 기록해보세요. <br>보다 나은 행복한 지금, 보다 행복한 내일이 만들어질거에요 :)</p>
+    </div>
+    <form nz-form [formGroup]="form" (ngSubmit)="submit()" class="pt-lg">
+      <nz-form-item>
+        <nz-form-label nzXs="24" nzSm="6" nzRequired nzFor="goal">행복일기</nz-form-label>
+        <nz-form-control nzXs="24" nzSm="14" nzMd="14">
+          <textarea nz-input formControlName="goal" id="goal" [nzAutosize]="{minRows: 4}" placeholder="오늘의 하루를 적어주세요"></textarea>
+          <nz-form-explain *ngIf="form.get('goal').dirty && form.get('goal').errors">행복일기 입력</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzXs="24" nzSm="6" nzFor="weight">사진</nz-form-label>
+        <nz-upload class="avatar-uploader"
+          nzAction="https://jsonplaceholder.typicode.com/posts/"
+          nzName="avatar"
+          nzListType="picture-card"
+          [nzShowUploadList]="false"
+          [nzBeforeUpload]="beforeUpload"
+          (nzChange)="handleChange($event)">
+          <ng-container *ngIf="!avatarUrl">
+            <i class="anticon anticon-plus"></i>
+            <div class="ant-upload-text">Upload</div>
+          </ng-container>
+          <img *ngIf="avatarUrl" [src]="avatarUrl" class="avatar">
+        </nz-upload>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzXs="24" nzSm="6" nzRequired nzFor="weight">행복점수</nz-form-label>
+        <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+          <nz-input-number formControlName="weight" id="weight" [(ngModel)]="kibbleVal" [nzMin]="1" [nzMax]="100" [nzStep]="1" [nzFormatter]="formatterPercent" [nzParser]="parserPercent"></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzXs="24" nzSm="6" nzRequired nzFor="weight">전체공개</nz-form-label>
+        <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+          <label nz-checkbox [(ngModel)]="checked">모두에게 공유합니다 :)</label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="pt-lg">
+        <nz-form-control [nzXs]="{ span: 14, offset: 6 }" [nzSm]="{ span: 14, offset: 6 }">
+          <button nz-button class="btn_kb_submit" nzType="primary" type="submit" [nzLoading]="submitting">등록</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </nz-content>
+</section>

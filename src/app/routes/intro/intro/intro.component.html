@@ -1,0 +1,86 @@
+<section class="boxed">
+  <nz-content>
+    <div class="mt-lg mb-lg text-grey-dark description">
+      <h4 class="h4 mb-sm">Happiness PT 신청</h4>
+      <p class="mb-sm">
+          행복도 습관이고 과학입니다. <br>더 즐겁고, 편안하고, 만족스러운 삶을 원한다면 지금 Happiness PT를 신청해보세요!</p>
+    </div>
+    <form nz-form [formGroup]="form" (ngSubmit)="submit()" class="pt-lg">
+      <nz-form-item>
+        <nz-form-label nzXs="24" nzSm="6" nzRequired nzFor="user_name">이름</nz-form-label>
+        <nz-form-control nzXs="24" nzSm="14" nzMd="14">
+          <input nz-input id="user_name" placeholder="이름을 입력해주세요">
+        </nz-form-control>
+        <ng-template #suffixTemplate><i class="anticon anticon-close-circle" (click)="username=null" *ngIf="username"></i></ng-template>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzXs="24" nzSm="6" nzRequired nzFor="user_gender">성별</nz-form-label>
+        <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+          <nz-radio-group formControlName="public">
+            <label nz-radio [nzValue]="1">여성</label>
+            <label nz-radio [nzValue]="2">남성</label>
+            <label nz-radio [nzValue]="3">기타</label>
+          </nz-radio-group>
+          <input *ngIf="form.value.public === 3" nz-input formControlName="publicUsers" placeholder="입력해주세요">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzXs="24" nzSm="6" nzRequired nzFor="weight">나이</nz-form-label>
+        <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+          <nz-input-number formControlName="weight" id="weight" [(ngModel)]="ageVal" [nzMin]="1" [nzMax]="120" [nzStep]="1" [nzFormatter]="formatterAge" [nzParser]="parserAge"></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+          <nz-form-label nzXs="24" nzSm="6" nzRequired nzFor="wanted_pt">선호PT유형</nz-form-label>
+          <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+            <nz-radio-group formControlName="public">
+              <label nz-radio [nzValue]="1">온라인</label>
+              <label nz-radio [nzValue]="2">오프라인</label>
+            </nz-radio-group>
+          </nz-form-control>
+        </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzXs="24" nzSm="6" nzRequired nzFor="user_addr">지역</nz-form-label>
+        <nz-form-control nzXs="24" nzSm="14" nzMd="14">
+          <input nz-input id="user_addr" placeholder="예) 경기도 시흥시 은행동">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzXs="24" nzSm="6" nzRequired nzFor="user_phone">연락처</nz-form-label>
+        <nz-form-control nzXs="24" nzSm="14" nzMd="14">
+          <input formControlName="phoneNumber" id="'user_phone'" nz-input placeholder="예) 010-4519-1601">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzXs="24" nzSm="6" nzRequired nzFor="apply_reason">신청이유</nz-form-label>
+        <nz-form-control nzXs="24" nzSm="14" nzMd="14">
+          <textarea nz-input formControlName="reason" id="apply_reason" [nzAutosize]="{minRows: 4}" placeholder="Happiness PT 신청이유를 입력해주세요."></textarea>
+          <nz-form-explain *ngIf="form.get('reason').dirty && form.get('reason').errors">신청이유</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="mb-sm">
+        <nz-form-label nzXs="24" nzSm="6" nzRequired nzFor="define_happy">내가 생각하는 행복</nz-form-label>
+        <nz-form-control nzXs="24" nzSm="14" nzMd="14">
+          <textarea nz-input formControlName="def_hp" id="define_happy" [nzAutosize]="{minRows: 4}" placeholder="내가 생각하는 행복을 작성해주세요."></textarea>
+          <nz-form-explain *ngIf="form.get('def_hp').dirty && form.get('def_hp').errors">내가 생각하는 행복 작성하기</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="mb-sm">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <label nz-checkbox nzRequired>개인정보활용 동의</label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="mb-sm">
+        <nz-form-control [nzXs]="{ span: 14, offset: 6 }" [nzSm]="{ span: 14, offset: 6 }">
+          <button nz-button class="btn_kb_submit" nzType="primary" type="submit" [nzLoading]="submitting">신청하기</button>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control [nzXs]="{ span: 14, offset: 6 }" [nzSm]="{ span: 14, offset: 6 }">
+          <a nz-button nzType="primary" class="kakaoBtn" href="https://pf.kakao.com/_xaJtNC" target="_blank"><img src="{{kakaoUrl}}" />&nbsp;&nbsp;카카오톡 문의</a>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+
+  </nz-content>
+</section>

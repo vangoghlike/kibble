@@ -1,0 +1,10 @@
+
+:host ::ng-deep section.boxed {
+  margin:0 auto;
+  padding:32px 0 40px;
+  width:1080px;
+}
+
+@media (min-width: 1080px){
+
+}

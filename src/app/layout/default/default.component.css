@@ -1,0 +1,12 @@
+@import url(//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css);
+
+:host {
+  font-family:'Nanum Square','Malgun Gothic', dotum, sans-serif;
+}
+:host ::ng-deep .wrapper {
+  background-color:#fff;
+}
+:host ::ng-deep section.content {
+  width:100%;
+  margin:134px auto 0;
+}
